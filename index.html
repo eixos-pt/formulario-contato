@@ -27,7 +27,8 @@
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0;background:var(--deep);color:var(--paper);font-family:'Manrope',system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
-  
+ 
+  /* ============ PAGE SHELL — tech bg ============ */
   .shell{
     min-height:100vh;display:flex;flex-direction:column;
     background:
@@ -36,7 +37,7 @@
       linear-gradient(180deg, var(--bg-2) 0%, var(--deep) 70%);
     position:relative;overflow-x:hidden;
   }
-  
+  /* subtle grid overlay */
   .shell::before{
     content:'';position:absolute;inset:0;
     background-image:
@@ -47,50 +48,42 @@
     -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 30%, transparent 80%);
     pointer-events:none;
   }
-  
   .shell > *{position:relative;z-index:1}
-  
+ 
+  /* ============ TOP BAR ============ */
   .topbar{
     display:flex;align-items:center;justify-content:space-between;
     padding:18px 56px;border-bottom:1px solid var(--line);
     backdrop-filter:blur(12px);background:rgba(8,14,34,0.6);
   }
-  
   .brand{display:flex;align-items:center;gap:14px}
-  
   .brand-mark{
     font-family:'Manrope',sans-serif;font-weight:800;font-size:28px;line-height:1;letter-spacing:-1px;
   }
-  
   .brand-mark .x{
     display:inline-flex;align-items:center;justify-content:center;
     width:28px;height:28px;background:var(--yellow);color:var(--ink);
     border-radius:7px;font-weight:800;margin:0 2px;
     transform:translateY(2px);
   }
-  
   .brand-tag{
     font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
     color:var(--yellow);padding-left:14px;border-left:1px solid var(--line-strong);font-weight:600;
   }
-  
   .topbar-right{display:flex;align-items:center;gap:24px;font-family:'Geist Mono',monospace;font-size:12px;color:var(--muted);letter-spacing:0.5px}
-  
   .topbar-right a{color:var(--muted);text-decoration:none}
-  
   .topbar-right a:hover{color:var(--paper)}
-  
+ 
+  /* lang switch */
   .lang{display:inline-flex;border:1px solid var(--line-strong);border-radius:8px;overflow:hidden;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.5px;background:rgba(0,0,0,0.3)}
-  
   .lang button{
     background:transparent;border:none;color:var(--muted);padding:8px 16px;cursor:pointer;
     font-family:inherit;font-size:inherit;letter-spacing:inherit;text-transform:uppercase;
   }
-  
   .lang button.on{background:var(--yellow);color:var(--ink);font-weight:700}
-  
+ 
+  /* ============ HERO ============ */
   .hero{padding:88px 56px 48px;max-width:1080px;margin:0 auto;width:100%}
-  
   .eyebrow{
     display:inline-flex;align-items:center;gap:12px;
     font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;
@@ -98,25 +91,20 @@
     padding:10px 18px;border:1px solid var(--line-strong);border-radius:99px;
     background:rgba(255,214,10,0.04);
   }
-  
   .eyebrow .dot{width:8px;height:8px;border-radius:99px;background:var(--yellow);box-shadow:0 0 10px var(--yellow), 0 0 0 4px rgba(255,214,10,0.18)}
-  
   .eyebrow .sep{width:24px;height:1px;background:var(--line-strong)}
-  
   .hero h1{
     font-family:'Manrope',sans-serif;font-weight:300;
     font-size:clamp(64px,9vw,128px);line-height:0.94;letter-spacing:-3.5px;
     margin:0 0 28px;
   }
-  
   .hero h1 strong{font-weight:700}
-  
   .hero h1 em{font-style:normal;color:var(--yellow);font-weight:700}
-  
   .hero p{
     font-size:22px;line-height:1.5;color:var(--muted);max-width:680px;margin:0;
   }
-  
+ 
+  /* progress */
   .progress{
     display:flex;align-items:center;gap:14px;margin-top:52px;
     font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted-soft);
@@ -124,26 +112,20 @@
     background:rgba(255,255,255,0.02);
     width:fit-content;
   }
-  
   .progress .step{display:flex;align-items:center;gap:10px;padding:2px 0;transition:color .25s}
-  
   .progress .step.active{color:var(--paper)}
-  
   .progress .step.done{color:var(--yellow)}
-  
   .progress .num{
     width:26px;height:26px;border-radius:7px;border:1px solid var(--line-strong);
     display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;
   }
-  
   .progress .step.active .num{border-color:var(--yellow);background:var(--yellow);color:var(--ink)}
-  
   .progress .step.done .num{border-color:var(--yellow);background:rgba(255,214,10,0.12);color:var(--yellow)}
-  
   .progress .bar{flex:0 0 32px;height:1px;background:var(--line-strong)}
-  
+ 
+  /* ============ CARD AREA ============ */
   .stage{padding:24px 56px 96px;max-width:1080px;margin:0 auto;width:100%;flex:1}
-  
+ 
   .card{
     background:linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.015) 100%);
     border:1px solid var(--line-strong);
@@ -155,33 +137,28 @@
       0 1px 0 rgba(255,255,255,0.06) inset,
       0 30px 80px -20px rgba(0,0,0,0.5);
   }
-  
+  /* glow accent line */
   .card::before{
     content:'';position:absolute;top:0;left:32px;right:32px;height:1px;
     background:linear-gradient(90deg, transparent, var(--yellow), transparent);
     opacity:0.6;
   }
-  
   .card-head{
     display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:36px;padding-bottom:28px;border-bottom:1px solid var(--line);
   }
-  
   .card-head h2{
     font-family:'Manrope',sans-serif;font-weight:300;font-size:52px;line-height:1.02;letter-spacing:-2px;margin:0;
   }
-  
   .card-head h2 strong{font-weight:700}
-  
   .card-head .badge{
     font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
     padding:8px 14px;border-radius:7px;border:1px solid var(--line-strong);color:var(--muted);
     background:rgba(0,0,0,0.3);white-space:nowrap;
   }
-  
   .card-head .helper{font-size:18px;color:var(--muted);margin:18px 0 0;line-height:1.55;max-width:640px}
-  
+ 
+  /* ============ CARD 1 — type pick ============ */
   .type-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-  
   .type-card{
     text-align:left;padding:32px;border:1px solid var(--line-strong);
     border-radius:16px;background:rgba(255,255,255,0.02);cursor:pointer;
@@ -189,595 +166,559 @@
     transition:all .2s ease;display:flex;flex-direction:column;gap:14px;
     position:relative;overflow:hidden;
   }
-  
   .type-card::after{
     content:'';position:absolute;inset:0;border-radius:16px;
     background:radial-gradient(circle at 80% 0%, rgba(255,214,10,0.08) 0%, transparent 60%);
     opacity:0;transition:opacity .25s;pointer-events:none;
   }
-  
   .type-card:hover{border-color:var(--yellow);transform:translateY(-2px);box-shadow:0 12px 32px -8px rgba(255,214,10,0.2)}
-  
   .type-card:hover::after{opacity:1}
-  
   .type-card.selected{border-color:var(--yellow);background:rgba(255,214,10,0.05)}
-  
   .type-card.selected::after{opacity:1}
-  
   .type-card .icon{
     width:60px;height:60px;border-radius:14px;border:1px solid var(--line-strong);
     background:rgba(255,214,10,0.06);
     display:flex;align-items:center;justify-content:center;font-size:26px;color:var(--yellow);
     font-family:'Geist Mono',monospace;font-weight:700;
   }
-  
   .type-card.selected .icon{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
-  
   .type-card h3{font-family:'Manrope',sans-serif;font-weight:600;font-size:32px;margin:0;line-height:1.1;letter-spacing:-0.5px}
-  
   .type-card p{font-size:19px;color:var(--paper);margin:0;line-height:1.5;font-weight:400}
-  
   .type-card p strong{color:var(--yellow);font-weight:600}
-  
   .type-card .meta{
     margin-top:auto;padding-top:14px;border-top:1px solid var(--line);
     font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted-soft);
   }
-  
+ 
+  /* ============ CARD 2 — form ============ */
   .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  
   .field{display:flex;flex-direction:column;gap:8px}
-  
-  .field label{
-    font-family:'Geist Mono',monospace;font-size:13px;letter-spacing:1px;text-transform:uppercase;
-    color:var(--muted);font-weight:600;
-  }
-  
-  .field input, .field select{
-    background:rgba(255,255,255,0.04);border:1px solid var(--line-strong);
-    border-radius:10px;padding:14px 16px;
-    color:var(--paper);font-family:inherit;font-size:17px;
-    transition:all .2s ease;
-  }
-  
-  .field input::placeholder, .field select{color:var(--muted-soft)}
-  
-  .field input:focus, .field select:focus{
-    outline:none;border-color:var(--yellow);
-    background:rgba(255,214,10,0.04);box-shadow:0 0 0 3px rgba(255,214,10,0.08);
-  }
-  
-  .field input:disabled, .field select:disabled{
-    opacity:0.6;cursor:not-allowed;
-  }
-  
-  .field-hint{
-    font-size:14px;color:var(--muted-soft);line-height:1.4;margin-top:4px;
-  }
-  
-  .field-hint.loading{
-    color:var(--yellow);animation:spin 1s linear infinite;
-  }
-  
-  .field-hint.error{color:var(--red)}
-  
-  @keyframes spin{
-    0%{transform:rotate(0deg)}
-    100%{transform:rotate(360deg)}
-  }
-  
   .field.full{grid-column:1/-1}
-  
-  .checkbox{
-    display:flex;align-items:flex-start;gap:12px;margin-top:16px;
+  .field label{
+    font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.8px;text-transform:uppercase;
+    color:var(--muted);font-weight:500;display:flex;justify-content:space-between;align-items:center;
   }
-  
-  .checkbox input{
-    width:20px;height:20px;margin:4px 0 0;flex-shrink:0;cursor:pointer;
+  .field label .req{color:var(--yellow);font-size:11px}
+  .field input,.field select{
+    width:100%;height:54px;padding:0 18px;
+    background:rgba(0,0,0,0.25);
+    border:1px solid var(--line-strong);
+    border-radius:11px;color:var(--paper);
+    font-family:'Manrope',sans-serif;font-size:17px;font-weight:500;
+    transition:all .15s ease;
   }
-  
-  .checkbox label{
-    font-family:inherit;font-size:15px;text-transform:none;letter-spacing:normal;
-    color:var(--paper);margin:0;cursor:pointer;line-height:1.5;
+  .field input:focus,.field select:focus{
+    outline:none;border-color:var(--yellow);background:rgba(255,214,10,0.04);
+    box-shadow:0 0 0 3px rgba(255,214,10,0.12), 0 0 20px -5px rgba(255,214,10,0.3);
   }
-  
-  .card-actions{
-    display:flex;align-items:center;gap:14px;margin-top:36px;
+  .field input::placeholder{color:var(--muted-soft)}
+  .field select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%23ffd60a' stroke-width='1.5' fill='none'/></svg>");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+  .field .hint{font-size:12px;color:var(--muted-soft);font-family:'Geist Mono',monospace;letter-spacing:0.5px}
+ 
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
-  
-  button{
-    background:var(--yellow);color:var(--ink);border:none;border-radius:10px;
-    padding:14px 28px;font-family:'Manrope',sans-serif;font-size:16px;font-weight:600;
-    cursor:pointer;transition:all .2s ease;letter-spacing:0.5px;
-    display:inline-flex;align-items:center;gap:8px;
+ 
+  .nif-input{letter-spacing:6px;font-family:'Geist Mono',monospace !important;font-size:20px !important;font-weight:600 !important}
+ 
+  /* contextual block */
+  .ctx-block{
+    margin-top:28px;padding:24px 26px;border-radius:14px;
+    background:linear-gradient(135deg, rgba(255,214,10,0.06) 0%, rgba(255,214,10,0.02) 100%);
+    border:1px solid rgba(255,214,10,0.22);
+    font-size:16px;color:var(--muted);line-height:1.6;
+    display:flex;gap:18px;align-items:flex-start;position:relative;overflow:hidden;
   }
-  
-  button:hover{background:var(--cream);transform:translateY(-2px);box-shadow:0 12px 32px -8px rgba(255,214,10,0.3)}
-  
-  button:active{transform:translateY(0)}
-  
-  button.secondary{
-    background:rgba(255,255,255,0.08);color:var(--paper);border:1px solid var(--line-strong);
+  .ctx-block::before{
+    content:'';position:absolute;top:-50%;right:-20%;width:200px;height:200px;
+    background:radial-gradient(circle, rgba(255,214,10,0.18) 0%, transparent 60%);
+    pointer-events:none;
   }
-  
-  button.secondary:hover{background:rgba(255,255,255,0.12);border-color:var(--yellow)}
-  
-  button.loading{opacity:0.6;cursor:not-allowed;pointer-events:none}
-  
+  .ctx-block .ic{
+    width:36px;height:36px;border-radius:10px;background:rgba(255,214,10,0.14);color:var(--yellow);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;
+    border:1px solid rgba(255,214,10,0.3);
+    font-family:'Geist Mono',monospace;font-weight:700;
+  }
+  .ctx-block strong{color:var(--paper);font-weight:600}
+ 
+  /* ============ ACTIONS ============ */
+  .actions{
+    margin-top:40px;padding-top:28px;border-top:1px solid var(--line);
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .privacy{display:flex;align-items:center;gap:10px;font-size:15px;color:var(--muted)}
+  .privacy input{accent-color:var(--yellow);width:18px;height:18px}
+  .btn{
+    padding:18px 32px;border-radius:11px;border:1px solid transparent;cursor:pointer;
+    font-family:'Manrope',sans-serif;font-size:16px;font-weight:600;letter-spacing:0.2px;
+    display:inline-flex;align-items:center;gap:10px;transition:all .15s ease;
+  }
+  .btn-primary{
+    background:var(--yellow);color:var(--ink);
+    box-shadow:0 8px 24px -6px rgba(255,214,10,0.4), 0 0 0 1px var(--yellow);
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 36px -6px rgba(255,214,10,0.55), 0 0 0 1px var(--yellow)}
+  .btn-primary:disabled{background:rgba(245,241,234,0.08);color:var(--muted-soft);cursor:not-allowed;transform:none;box-shadow:none}
+  .btn-ghost{background:transparent;color:var(--muted);border-color:var(--line-strong)}
+  .btn-ghost:hover{color:var(--paper);border-color:var(--paper)}
+  .btn.loading{background:var(--orange);color:#fff;pointer-events:none;box-shadow:0 0 24px -4px rgba(230,126,34,0.5)}
+ 
+  /* ============ CARD 3 — success ============ */
+  .success-card{text-align:center;padding:80px 48px}
+  .success-mark{
+    width:104px;height:104px;border-radius:24px;background:rgba(39,174,96,0.12);
+    border:1px solid rgba(39,174,96,0.3);
+    display:inline-flex;align-items:center;justify-content:center;margin-bottom:32px;
+    font-size:46px;color:var(--green);font-weight:700;
+    box-shadow:0 0 40px -8px rgba(39,174,96,0.4), 0 0 0 1px rgba(39,174,96,0.2);
+  }
+  .success-card h2{
+    font-family:'Manrope',sans-serif;font-weight:300;font-size:68px;line-height:1.0;
+    letter-spacing:-2.5px;margin:0 0 20px;
+  }
+  .success-card h2 strong{font-weight:700;color:var(--yellow)}
+  .success-card p{font-size:19px;color:var(--muted);max-width:620px;margin:0 auto 44px;line-height:1.6}
+  .success-recap{
+    margin-top:40px;padding:28px;border-top:1px solid var(--line);
+    display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:left;
+    background:rgba(0,0,0,0.2);border-radius:14px;border:1px solid var(--line);
+  }
+  .success-recap .lbl{font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted-soft);margin-bottom:8px}
+  .success-recap .val{font-size:16px;color:var(--paper);font-weight:600}
+ 
+  /* ============ FOOTER ============ */
+  .footer{
+    border-top:1px solid var(--line);padding:32px 56px;
+    display:flex;align-items:center;justify-content:space-between;
+    font-family:'Geist Mono',monospace;font-size:12px;color:var(--muted-soft);letter-spacing:0.5px;
+    background:rgba(0,0,0,0.3);
+  }
+  .footer a{color:var(--muted);text-decoration:none}
+  .footer a:hover{color:var(--paper)}
+ 
+  /* hide elements based on state */
   .hidden{display:none !important}
-  
-  /* ============ CARD 3 — recap ============ */
-  .recap-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin:36px 0}
-  
-  .recap-item{
-    display:flex;flex-direction:column;gap:8px;padding:20px;
-    background:rgba(255,255,255,0.02);border:1px solid var(--line);border-radius:12px;
-  }
-  
-  .recap-item .label{
-    font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:1px;text-transform:uppercase;
-    color:var(--muted-soft);
-  }
-  
-  .recap-item .value{
-    font-size:20px;font-weight:600;color:var(--yellow);line-height:1.4;
-  }
-  
-  @media(max-width:768px){
-    .topbar{padding:16px 28px}
-    .hero{padding:48px 28px 24px}
-    .stage{padding:16px 28px 56px}
-    .card{padding:28px}
+ 
+  /* mobile */
+  @media (max-width:760px){
+    .topbar,.hero,.stage,.footer{padding-left:24px;padding-right:24px}
+    .topbar{flex-direction:column;gap:14px;align-items:flex-start}
+    .topbar-right{flex-wrap:wrap;gap:14px}
+    .hero{padding-top:48px}
+    .card{padding:32px 24px}
+    .card-head{flex-direction:column;gap:14px}
+    .card-head h2{font-size:30px}
     .type-grid{grid-template-columns:1fr}
     .form-grid{grid-template-columns:1fr}
-    .recap-grid{grid-template-columns:1fr}
-    .card-head h2{font-size:32px}
+    .actions{flex-direction:column-reverse;align-items:stretch}
+    .actions .btn{width:100%;justify-content:center}
+    .success-recap{grid-template-columns:1fr 1fr}
+    .footer{flex-direction:column;gap:10px;text-align:left;align-items:flex-start}
+    .progress{flex-wrap:wrap}
+    .success-card h2{font-size:36px}
   }
 </style>
 </head>
 <body>
+ 
 <div class="shell">
-  <div class="topbar">
+ 
+  <!-- ============ TOP BAR ============ -->
+  <header class="topbar">
     <div class="brand">
-      <div class="brand-mark">E<span class="x">X</span>OS</div>
-      <div class="brand-tag">Contabilidade Estratégica</div>
+      <div class="brand-mark">ei<span class="x">x</span>os.</div>
+      <div class="brand-tag" data-t="brand_tag">Contabilidade Estratégica</div>
     </div>
     <div class="topbar-right">
-      <div class="lang">
-        <button class="on" data-lang="pt">PT</button>
+      <a href="mailto:geral@eixos.pt">geral@eixos.pt</a>
+      <span style="opacity:0.4">·</span>
+      <a href="tel:+351215907738">+351 215 907 738</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang="pt" class="on">PT</button>
         <button data-lang="en">EN</button>
       </div>
-      <a href="#" target="_blank">LinkedIn</a>
-      <a href="https://eixos.pt" target="_blank">Site</a>
     </div>
-  </div>
-
-  <div class="hero">
+  </header>
+ 
+  <!-- ============ HERO ============ -->
+  <section class="hero">
     <div class="eyebrow">
       <span class="dot"></span>
-      <span data-t="eyebrow">Propostas em 2 minutos</span>
+      <span data-t="hero_eyebrow">Pedido de proposta · Resposta em 24–48h</span>
+      <span class="sep"></span>
+      <span data-t="hero_step">3 passos · ~2 min</span>
     </div>
-    <h1>
-      <strong data-t="h1_strong">Contabilidade</strong>
-      <em data-t="h1_em">estratégica</em>
-      <span data-t="h1_rest">para crescer</span>
-    </h1>
-    <p data-t="hero_p">Conta-nos sobre a tua empresa e envia-mos uma proposta personalizada</p>
+    <h1 data-t="hero_title">Bem-vindo à <strong>Eixos</strong>.</h1>
+    <p data-t="hero_sub">Vamos começar a sua jornada. Em três passos rápidos, ficamos com o contexto que precisamos para preparar uma proposta personalizada.</p>
+ 
     <div class="progress" id="progress">
-      <div class="step" data-step="1">
-        <div class="num">1</div>
-        <span data-t="step_1">Empresa</span>
-      </div>
+      <div class="step active" data-step="1"><div class="num">1</div><span data-t="step_1">Tipo de empresa</span></div>
       <div class="bar"></div>
-      <div class="step" data-step="2">
-        <div class="num">2</div>
-        <span data-t="step_2">Dados</span>
-      </div>
+      <div class="step" data-step="2"><div class="num">2</div><span data-t="step_2">Dados da empresa</span></div>
       <div class="bar"></div>
-      <div class="step" data-step="3">
-        <div class="num">3</div>
-        <span data-t="step_3">Proposta</span>
-      </div>
+      <div class="step" data-step="3"><div class="num">3</div><span data-t="step_3">Confirmação</span></div>
     </div>
-  </div>
-
-  <div class="stage">
-    <!-- CARD 1: Type selection -->
-    <div class="card" id="card1">
+  </section>
+ 
+  <!-- ============ STAGE ============ -->
+  <main class="stage">
+ 
+    <!-- ===== CARD 1 ===== -->
+    <article class="card" id="card1">
       <div class="card-head">
         <div>
-          <h2 data-t="c1_title">Qual é a <strong data-t="c1_title_strong">tua</strong> situação?</h2>
-          <p class="helper" id="c1-helper"></p>
+          <h2 data-t="c1_title">A sua empresa já existe ou está a nascer?</h2>
+          <p class="helper" data-t="c1_helper">Esta resposta determina a documentação que pedimos a seguir e o tipo de proposta que preparamos para si.</p>
         </div>
-        <span class="badge" data-t="step_1_badge">Passo 1 de 3</span>
+        <span class="badge" data-t="c1_badge">Passo 1 / 3</span>
       </div>
+ 
       <div class="type-grid">
         <button class="type-card" data-type="existente">
-          <div class="icon">🏢</div>
-          <h3 data-t="type_existente">Já tenho empresa</h3>
-          <p data-t="type_existente_desc">Com <strong>conta de contabilista</strong></p>
-          <div class="meta" data-t="type_existente_meta">~5 min</div>
+          <div class="icon">▤</div>
+          <h3 data-t="c1_opt1_title">Empresa existente</h3>
+          <p data-t="c1_opt1_desc">Já tem contabilista, e quer <strong>mudar para a Eixos</strong>.</p>
         </button>
         <button class="type-card" data-type="nova">
-          <div class="icon">⭐</div>
-          <h3 data-t="type_nova">Empresa nova</h3>
-          <p data-t="type_nova_desc">Acabei de <strong>registar a empresa</strong></p>
-          <div class="meta" data-t="type_nova_meta">~3 min</div>
+          <div class="icon">✦</div>
+          <h3 data-t="c1_opt2_title">Empresa nova</h3>
+          <p data-t="c1_opt2_desc"><strong>Recém-criada</strong> ou ainda <strong>em constituição</strong>.</p>
         </button>
       </div>
-    </div>
-
-    <!-- CARD 2: Data collection -->
-    <div class="card hidden" id="card2">
+    </article>
+ 
+    <!-- ===== CARD 2 ===== -->
+    <article class="card hidden" id="card2">
       <div class="card-head">
         <div>
-          <h2 data-t="c2_title">Um pouco <strong data-t="c2_title_strong">sobre ti</strong></h2>
-          <p class="helper" id="c2-helper"></p>
+          <h2 data-t="c2_title">Conte-nos sobre a sua empresa.</h2>
+          <p class="helper" id="c2-helper" data-t="c2_helper_existente">Dados básicos para preparar uma proposta com escopo e honorários por escrito.</p>
         </div>
-        <span class="badge" data-t="step_2_badge">Passo 2 de 3</span>
+        <span class="badge" data-t="c2_badge">Passo 2 / 3</span>
       </div>
-
-      <form id="form">
+ 
+      <form id="form" novalidate>
         <div class="form-grid">
-          <!-- NIF | Nome -->
+ 
           <div class="field">
-            <label for="nif" data-t="label_nif">NIF</label>
-            <input
-              type="text"
-              id="nif"
-              inputmode="numeric"
-              maxlength="9"
-              placeholder="Ex.: 518635937"
-              required
-            />
-            <div class="field-hint" id="nif-hint-default">
-              ↳ <span data-t="hint_nif_default">Validação completa será feita após envio.</span>
-            </div>
-            <div class="field-hint loading" id="nif-hint-loading" style="display:none">
-              🔄 <span data-t="hint_nif_loading">À procura da sua empresa...</span>
-            </div>
-            <div class="field-hint error" id="nif-hint-error" style="display:none">
-              ❌ <span data-t="hint_nif_error">NIF não encontrado. Verifica o número.</span>
-            </div>
+            <label>NIF <span class="req">*</span></label>
+            <input type="text" id="nif" class="nif-input" inputmode="numeric" maxlength="9" placeholder="9 dígitos" required />
+            <span class="hint" id="nif-hint-default" data-t="nif_hint">↳ Validação completa será feita após envio.</span>
+            <span class="hint" id="nif-hint-loading" style="display:none; color:#7dd3fc; font-weight:bold;">
+              <span style="display:inline-block;animation:spin 1s linear infinite;">🔄</span> À procura da sua empresa...
+            </span>
+            <span class="hint" id="nif-hint-error" style="display:none; color:#c0392b; font-weight:bold;">
+              ❌ NIF não encontrado. Verifica o número.
+            </span>
           </div>
-
+ 
           <div class="field">
-            <label for="nome" data-t="label_nome">Nome da empresa</label>
-            <input
-              type="text"
-              id="nome"
-              placeholder="Ex.: Eixos Lda."
-              required
-            />
+            <label><span data-t="lbl_nome">Nome da empresa</span> <span class="req">*</span></label>
+            <input type="text" id="nome" placeholder="Ex.: Eixos Lda." required />
           </div>
-
-          <!-- CAE | Morada -->
+ 
           <div class="field">
-            <label for="cae" data-t="label_cae">CAE principal</label>
-            <input
-              type="text"
-              id="cae"
-              inputmode="numeric"
-              placeholder="Ex.: 69201"
-              required
-            />
+            <label>CAE principal <span class="req">*</span></label>
+            <input type="text" id="cae" inputmode="numeric" maxlength="5" placeholder="Ex.: 62020" required />
           </div>
-
+ 
           <div class="field">
-            <label for="cidade" data-t="label_morada">Morada</label>
-            <input
-              type="text"
-              id="cidade"
-              placeholder="Ex.: Rua A, Lisboa"
-              required
-            />
+            <label>Morada <span class="req">*</span></label>
+            <input type="text" id="cidade" placeholder="Ex.: Rua Principal, nº 123" required />
           </div>
-
-          <!-- Natureza Jurídica | Regime IVA -->
+ 
           <div class="field">
-            <label for="natureza" data-t="label_natureza">Natureza Jurídica</label>
+            <label><span data-t="lbl_natureza">Natureza jurídica</span> <span class="req">*</span></label>
             <select id="natureza" required>
-              <option value="">— <span data-t="select_placeholder">Escolha</span> —</option>
-              <option value="Unipessoal">Unipessoal</option>
+              <option value="" data-t="opt_select">— selecione —</option>
               <option value="Sociedade por Quotas">Sociedade por Quotas</option>
-              <option value="SA">Sociedade Anónima (SA)</option>
-              <option value="Associação">Associação</option>
-              <option value="Outra">Outra</option>
+              <option value="Sociedade Anónima">Sociedade Anónima</option>
+              <option value="Sociedade Unipessoal">Sociedade Unipessoal por Quotas</option>
+              <option value="Empresário em Nome Individual">Empresário em Nome Individual</option>
+              <option value="Cooperativa">Cooperativa</option>
+              <option value="Outro" data-t="opt_other">Outro</option>
             </select>
           </div>
-
-          <div class="field" id="regime_iva_field" style="display:none">
-            <label for="regime_iva" data-t="label_regime_iva">Regime IVA</label>
+ 
+          <!-- existente only -->
+          <div class="field cond-existente">
+            <label><span data-t="lbl_iva">Regime IVA</span> <span class="req">*</span></label>
             <select id="regime_iva">
-              <option value="">— <span data-t="select_placeholder">Escolha</span> —</option>
-              <option value="Isento">Isento</option>
-              <option value="Normal">Normal</option>
+              <option value="" data-t="opt_select">— selecione —</option>
+              <option value="normal" data-t="iva_mensal">Normal · mensal</option>
+              <option value="trimestral" data-t="iva_trimestral">Normal · trimestral</option>
+              <option value="isento" data-t="iva_isento">Isento</option>
             </select>
           </div>
-
-          <!-- Nº Funcionários | Nº Contas -->
-          <div class="field" id="funcionarios_field">
-            <label for="funcionarios" data-t="label_funcionarios">Nº Funcionários</label>
-            <input
-              type="number"
-              id="funcionarios"
-              min="0"
-              placeholder="Ex.: 2"
-            />
-          </div>
-
-          <div class="field" id="contas_field" style="display:none">
-            <label for="contas_bancarias" data-t="label_contas">Nº Contas Bancárias</label>
-            <input
-              type="number"
-              id="contas_bancarias"
-              min="0"
-              placeholder="Ex.: 1"
-            />
-          </div>
-
-          <!-- Email | Telemóvel -->
+ 
           <div class="field">
-            <label for="email" data-t="label_email">Email</label>
-            <input
-              type="email"
-              id="email"
-              placeholder="Ex.: eu@empresa.pt"
-              required
-            />
+            <label><span data-t="lbl_func">Nº de funcionários</span> <span class="req">*</span></label>
+            <input type="number" id="funcionarios" min="0" max="9999" placeholder="0" required />
           </div>
-
+ 
+          <!-- existente only -->
+          <div class="field cond-existente">
+            <label><span data-t="lbl_contas">Nº de contas bancárias</span> <span class="req">*</span></label>
+            <input type="number" id="contas_bancarias" min="0" max="50" placeholder="1" />
+          </div>
+ 
           <div class="field">
-            <label for="telemovel" data-t="label_telemovel">Telemóvel</label>
-            <input
-              type="tel"
-              id="telemovel"
-              placeholder="Ex.: 912467788"
-            />
+            <label>Email de contacto <span class="req">*</span></label>
+            <input type="email" id="email" placeholder="cliente@empresa.pt" required />
+          </div>
+ 
+          <div class="field">
+            <label>Telemóvel <span class="req">*</span></label>
+            <input type="tel" id="telefone" placeholder="Ex.: 912467788" required />
           </div>
         </div>
-
-        <!-- Privacy checkbox -->
-        <div class="checkbox">
-          <input type="checkbox" id="privacy" required />
-          <label for="privacy" data-t="label_privacy">
-            Concordo com a recolha e processamento de dados de acordo com a política de privacidade
+ 
+        <div class="ctx-block" id="ctx-existente">
+          <div class="ic">↳</div>
+          <div>
+            <strong data-t="ctx_existente_t">Transição sem fricção.</strong><br/>
+            <span data-t="ctx_existente_d">Encarregamo-nos do contacto com o seu atual contabilista, da transferência de histórico e da migração para a plataforma. Sem interrupções para o seu negócio.</span>
+          </div>
+        </div>
+        <div class="ctx-block hidden" id="ctx-nova">
+          <div class="ic">✦</div>
+          <div>
+            <strong data-t="ctx_nova_t">Acompanhamento desde o primeiro dia.</strong><br/>
+            <span data-t="ctx_nova_d">Apoiamos na constituição, escolha de regime fiscal, abertura de atividade e configuração da plataforma. Sai com tudo a funcionar.</span>
+          </div>
+        </div>
+ 
+        <div class="actions">
+          <label class="privacy">
+            <input type="checkbox" id="privacy" checked />
+            <span data-t="privacy">Aceito a <a href="Politica de Privacidade.html" target="_blank" rel="noopener" style="color:var(--yellow);text-decoration:underline">Política de Privacidade</a></span>
           </label>
-        </div>
-
-        <!-- Actions -->
-        <div class="card-actions">
-          <button type="submit" id="btn-submit">
-            <span data-t="btn_submit">Enviar proposta</span> →
-          </button>
-          <button type="button" class="secondary" id="btn-back" data-t="btn_back">Voltar</button>
+          <div style="display:flex;gap:12px">
+            <button type="button" class="btn btn-ghost" id="btn-back" data-t="btn_back">← Voltar</button>
+            <button type="submit" class="btn btn-primary" id="btn-submit"><span data-t="btn_submit">Confirmar e avançar</span> →</button>
+          </div>
         </div>
       </form>
+    </article>
+ 
+    <!-- ===== CARD 3 ===== -->
+    <article class="card success-card hidden" id="card3">
+      <div class="success-mark">✓</div>
+      <h2 data-t="c3_title">Obrigado, <strong>recebemos os seus dados</strong>.</h2>
+      <p data-t="c3_sub">Vamos analisá-los com atenção. Dentro das próximas <strong style="color:var(--paper)">24 a 48 horas</strong> recebe no seu email a proposta personalizada, com escopo, cadência e honorários.</p>
+ 
+      <div class="success-recap" id="recap">
+        <div><div class="lbl" data-t="recap_tipo">Tipo</div><div class="val" id="recap-tipo">—</div></div>
+        <div><div class="lbl">NIF</div><div class="val" id="recap-nif">—</div></div>
+        <div><div class="lbl" data-t="recap_empresa">Empresa</div><div class="val" id="recap-nome">—</div></div>
+        <div><div class="lbl">Email</div><div class="val" id="recap-email">—</div></div>
+      </div>
+ 
+      <div style="margin-top:40px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="mailto:geral@eixos.pt" class="btn btn-ghost" data-t="c3_cta1">Falar diretamente</a>
+        <button class="btn btn-primary" id="btn-restart"><span data-t="c3_cta2">Submeter outro pedido</span> ↻</button>
+      </div>
+    </article>
+ 
+  </main>
+ 
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div>© 2026 <strong style="color:var(--paper);font-weight:500">Eixos</strong> · <span data-t="footer_tag">Contabilidade Estratégica</span></div>
+    <div style="display:flex;gap:18px">
+      <a href="https://eixos.pt" target="_blank" rel="noopener">eixos.pt</a>
+      <a href="Politica de Privacidade.html" target="_blank" rel="noopener" data-t="footer_privacy">Política de Privacidade</a>
+      <a href="#" data-t="footer_terms">Termos</a>
     </div>
-
-    <!-- CARD 3: Success -->
-    <div class="card hidden" id="card3">
-      <div class="card-head">
-        <div>
-          <h2 data-t="c3_title">Proposta <strong data-t="c3_title_strong">enviada!</strong></h2>
-          <p class="helper" data-t="c3_helper">Consultámos a tua informação e enviámos um email com a nossa proposta. Entra em contacto se tiveres dúvidas.</p>
-        </div>
-        <span class="badge" data-t="step_3_badge">Passo 3 de 3</span>
-      </div>
-
-      <div class="recap-grid">
-        <div class="recap-item">
-          <span class="label" data-t="recap_tipo">Tipo</span>
-          <span class="value" id="recap-tipo">—</span>
-        </div>
-        <div class="recap-item">
-          <span class="label" data-t="recap_nif">NIF</span>
-          <span class="value" id="recap-nif">—</span>
-        </div>
-        <div class="recap-item">
-          <span class="label" data-t="recap_nome">Empresa</span>
-          <span class="value" id="recap-nome">—</span>
-        </div>
-        <div class="recap-item">
-          <span class="label" data-t="recap_email">Email</span>
-          <span class="value" id="recap-email">—</span>
-        </div>
-      </div>
-
-      <div class="card-actions">
-        <button id="btn-restart" data-t="btn_restart">Nova proposta</button>
-      </div>
-    </div>
-  </div>
+  </footer>
+ 
 </div>
-
+ 
 <script>
+/* ============ CONFIG ============ */
+const WEBHOOK_URL = 'https://eixosautomacao.app.n8n.cloud/webhook/jornada-cliente';
+ 
+/* ============ TRANSLATIONS ============ */
 const T = {
   pt: {
-    eyebrow: 'Propostas em 2 minutos',
-    h1_strong: 'Contabilidade',
-    h1_em: 'estratégica',
-    h1_rest: 'para crescer',
-    hero_p: 'Conta-nos sobre a tua empresa e envia-mos uma proposta personalizada',
-    step_1: 'Empresa',
-    step_2: 'Dados',
-    step_3: 'Proposta',
-    c1_title: 'Qual é a ',
-    c1_title_strong: 'tua',
-    c1_helper: '',
-    step_1_badge: 'Passo 1 de 3',
-    type_existente: 'Já tenho empresa',
-    type_existente_desc: 'Com ',
-    type_existente_meta: '~5 min',
-    type_nova: 'Empresa nova',
-    type_nova_desc: 'Acabei de ',
-    type_nova_meta: '~3 min',
-    c2_title: 'Um pouco ',
-    c2_title_strong: 'sobre ti',
-    c2_helper: '',
-    step_2_badge: 'Passo 2 de 3',
-    label_nif: 'NIF',
-    hint_nif_default: 'Validação completa será feita após envio.',
-    hint_nif_loading: 'À procura da sua empresa...',
-    hint_nif_error: 'NIF não encontrado. Verifica o número.',
-    label_nome: 'Nome da empresa',
-    label_cae: 'CAE principal',
-    label_morada: 'Morada',
-    label_natureza: 'Natureza Jurídica',
-    select_placeholder: 'Escolha',
-    label_regime_iva: 'Regime IVA',
-    label_funcionarios: 'Nº Funcionários',
-    label_contas: 'Nº Contas Bancárias',
-    label_email: 'Email',
-    label_telemovel: 'Telemóvel',
-    label_privacy: 'Concordo com a recolha e processamento de dados de acordo com a política de privacidade',
-    btn_submit: 'Enviar proposta',
-    btn_back: 'Voltar',
-    c3_title: 'Proposta ',
-    c3_title_strong: 'enviada!',
-    c3_helper: 'Consultámos a tua informação e enviámos um email com a nossa proposta. Entra em contacto se tiveres dúvidas.',
-    step_3_badge: 'Passo 3 de 3',
-    recap_tipo: 'Tipo',
-    recap_nif: 'NIF',
-    recap_nome: 'Empresa',
-    recap_email: 'Email',
-    btn_restart: 'Nova proposta',
-    err_required: 'Por favor, preenche todos os campos obrigatórios.',
-    err_nif: 'NIF deve ter 9 dígitos.',
+    brand_tag: 'Contabilidade Estratégica',
+    hero_eyebrow: 'Pedido de proposta · Resposta em 24–48h',
+    hero_step: '3 passos · ~2 min',
+    hero_title: 'Bem-vindo à <strong>Eixos</strong>.',
+    hero_sub: 'Vamos começar a sua jornada. Em três passos rápidos, ficamos com o contexto que precisamos para preparar uma proposta personalizada.',
+    step_1: 'Tipo de empresa', step_2: 'Dados da empresa', step_3: 'Confirmação',
+ 
+    c1_title: 'A sua empresa já existe ou está a nascer?',
+    c1_helper: 'Esta resposta determina a documentação que pedimos a seguir e o tipo de proposta que preparamos para si.',
+    c1_badge: 'Passo 1 / 3',
+    c1_opt1_title: 'Empresa existente', c1_opt1_desc: 'Já tem contabilista, e quer <strong>mudar para a Eixos</strong>.', c1_opt1_meta: '↳ NIF · IES · balancete recente',
+    c1_opt2_title: 'Empresa nova', c1_opt2_desc: '<strong>Recém-criada</strong> ou ainda <strong>em constituição</strong>.', c1_opt2_meta: '↳ Atividade · sócios · plano',
+ 
+    c2_title: 'Conte-nos sobre a sua empresa.',
+    c2_helper_existente: 'Dados básicos para preparar uma proposta com escopo e honorários por escrito.',
+    c2_helper_nova: 'Vamos preparar uma proposta de acompanhamento desde a constituição.',
+    c2_badge: 'Passo 2 / 3',
+    nif_hint: '↳ Validação completa após envio.',
+    lbl_nome: 'Nome da empresa', lbl_natureza: 'Natureza jurídica', lbl_cidade: 'Cidade',
+    lbl_iva: 'Regime IVA', lbl_func: 'Nº de funcionários', lbl_contas: 'Nº de contas bancárias',
+    opt_select: '— selecione —', opt_other: 'Outro',
+    iva_mensal: 'Normal · mensal', iva_trimestral: 'Normal · trimestral', iva_isento: 'Isento',
+ 
+    ctx_existente_t: 'Transição sem fricção.',
+    ctx_existente_d: 'Encarregamo-nos do contacto com o seu atual contabilista, da transferência de histórico e da migração para a plataforma. Sem interrupções para o seu negócio.',
+    ctx_nova_t: 'Acompanhamento desde o primeiro dia.',
+    ctx_nova_d: 'Apoiamos na constituição, escolha de regime fiscal, abertura de atividade e configuração da plataforma. Sai com tudo a funcionar.',
+ 
+    privacy: 'Aceito a <a href="Politica de Privacidade.html" target="_blank" rel="noopener" style="color:var(--yellow);text-decoration:underline">Política de Privacidade</a>',
+    btn_back: '← Voltar', btn_submit: 'Confirmar e avançar', btn_loading: '⏳ A enviar…',
+ 
+    c3_title: 'Obrigado, <strong>recebemos os seus dados</strong>.',
+    c3_sub: 'Vamos analisá-los com atenção. Dentro das próximas <strong style="color:var(--paper)">24 a 48 horas</strong> recebe no seu email a proposta personalizada, com escopo, cadência e honorários.',
+    recap_tipo: 'Tipo', recap_empresa: 'Empresa',
+    c3_cta1: 'Falar diretamente', c3_cta2: 'Submeter outro pedido',
+ 
+    footer_tag: 'Contabilidade Estratégica', footer_privacy: 'Política de Privacidade', footer_terms: 'Termos',
+ 
+    err_required: 'Preencha os campos obrigatórios.',
+    err_nif: 'NIF inválido (9 dígitos).',
     err_email: 'Email inválido.',
-    err_send: 'Erro ao enviar proposta. Tenta novamente.',
-    btn_loading: 'Enviando...',
-    c2_helper_existente: 'Confirmámos a tua empresa. Ajuda-nos a compreender melhor o teu negócio.',
-    c2_helper_nova: 'Temos poucos dados. Pedimos-te estes detalhes para criar uma proposta excelente.',
+    err_send: 'Erro ao enviar. Tente novamente em instantes.',
+    type_existente: 'Empresa existente', type_nova: 'Empresa nova',
   },
   en: {
-    eyebrow: 'Proposals in 2 minutes',
-    h1_strong: 'Strategic',
-    h1_em: 'accounting',
-    h1_rest: 'for growth',
-    hero_p: 'Tell us about your company and we\'ll send you a personalized proposal',
-    step_1: 'Company',
-    step_2: 'Data',
-    step_3: 'Proposal',
-    c1_title: 'What\'s your ',
-    c1_title_strong: 'situation?',
-    c1_helper: '',
-    step_1_badge: 'Step 1 of 3',
-    type_existente: 'Established company',
-    type_existente_desc: 'With ',
-    type_existente_meta: '~5 min',
-    type_nova: 'New company',
-    type_nova_desc: 'Just ',
-    type_nova_meta: '~3 min',
-    c2_title: 'A little ',
-    c2_title_strong: 'about you',
-    c2_helper: '',
-    step_2_badge: 'Step 2 of 3',
-    label_nif: 'Tax ID',
-    hint_nif_default: 'Full validation will be done upon submission.',
-    hint_nif_loading: 'Looking up your company...',
-    hint_nif_error: 'Company not found. Check the number.',
-    label_nome: 'Company name',
-    label_cae: 'Main CAE',
-    label_morada: 'Address',
-    label_natureza: 'Legal Form',
-    select_placeholder: 'Choose',
-    label_regime_iva: 'VAT Regime',
-    label_funcionarios: 'Employees',
-    label_contas: 'Bank Accounts',
-    label_email: 'Email',
-    label_telemovel: 'Phone',
-    label_privacy: 'I agree with the collection and processing of data according to the privacy policy',
-    btn_submit: 'Send proposal',
-    btn_back: 'Back',
-    c3_title: 'Proposal ',
-    c3_title_strong: 'sent!',
-    c3_helper: 'We reviewed your information and sent you an email with our proposal. Contact us if you have any questions.',
-    step_3_badge: 'Step 3 of 3',
-    recap_tipo: 'Type',
-    recap_nif: 'Tax ID',
-    recap_nome: 'Company',
-    recap_email: 'Email',
-    btn_restart: 'New proposal',
+    brand_tag: 'Strategic Accounting',
+    hero_eyebrow: 'Proposal request · Reply within 24–48h',
+    hero_step: '3 steps · ~2 min',
+    hero_title: 'Welcome to <strong>Eixos</strong>.',
+    hero_sub: 'Let\'s begin your journey. In three quick steps we get the context we need to prepare a tailored proposal for you.',
+    step_1: 'Company type', step_2: 'Company details', step_3: 'Confirmation',
+ 
+    c1_title: 'Does your company already exist, or is it being formed?',
+    c1_helper: 'Your answer determines what documents we ask for next and what kind of proposal we prepare.',
+    c1_badge: 'Step 1 / 3',
+    c1_opt1_title: 'Existing company', c1_opt1_desc: 'You already have an accountant and want to <strong>switch to Eixos</strong>.', c1_opt1_meta: '↳ Tax ID · annual return · recent balance',
+    c1_opt2_title: 'New company', c1_opt2_desc: '<strong>Newly created</strong> or still <strong>being formed</strong>.', c1_opt2_meta: '↳ Activity · partners · plan',
+ 
+    c2_title: 'Tell us about your company.',
+    c2_helper_existente: 'Basic details so we can prepare a written proposal with scope and fees.',
+    c2_helper_nova: 'We\'ll prepare a proposal that supports you from incorporation onward.',
+    c2_badge: 'Step 2 / 3',
+    nif_hint: '↳ Full validation happens after submission.',
+    lbl_nome: 'Company name', lbl_natureza: 'Legal form', lbl_cidade: 'City',
+    lbl_iva: 'VAT regime', lbl_func: 'Employees', lbl_contas: 'Bank accounts',
+    opt_select: '— select —', opt_other: 'Other',
+    iva_mensal: 'Normal · monthly', iva_trimestral: 'Normal · quarterly', iva_isento: 'Exempt',
+ 
+    ctx_existente_t: 'Frictionless transition.',
+    ctx_existente_d: 'We handle the conversation with your current accountant, the history transfer and the migration to our platform. No disruption to your business.',
+    ctx_nova_t: 'Support from day one.',
+    ctx_nova_d: 'We help with incorporation, tax regime choice, activity opening and platform setup. You walk out with everything running.',
+ 
+    privacy: 'I accept the <a href="Politica de Privacidade.html" target="_blank" rel="noopener" style="color:var(--yellow);text-decoration:underline">Privacy Policy</a>',
+    btn_back: '← Back', btn_submit: 'Confirm and continue', btn_loading: '⏳ Sending…',
+ 
+    c3_title: 'Thank you, <strong>we received your details</strong>.',
+    c3_sub: 'We\'ll review them carefully. Within the next <strong style="color:var(--paper)">24 to 48 hours</strong> you\'ll receive a tailored proposal in your inbox, with scope, cadence and fees.',
+    recap_tipo: 'Type', recap_empresa: 'Company',
+    c3_cta1: 'Talk to us', c3_cta2: 'Submit another request',
+ 
+    footer_tag: 'Strategic Accounting', footer_privacy: 'Privacy Policy', footer_terms: 'Terms',
+ 
     err_required: 'Please fill in all required fields.',
-    err_nif: 'Tax ID must have 9 digits.',
+    err_nif: 'Invalid Tax ID (9 digits).',
     err_email: 'Invalid email.',
-    err_send: 'Error sending proposal. Try again.',
-    btn_loading: 'Sending...',
-    c2_helper_existente: 'We confirmed your company. Help us understand your business better.',
-    c2_helper_nova: 'We have limited data. We need these details to create an excellent proposal.',
-  },
+    err_send: 'Error sending data. Please try again.',
+    type_existente: 'Existing company', type_nova: 'New company',
+  }
 };
-
+ 
 let LANG = 'pt';
-let WEBHOOK_URL = 'https://eixosautomacao.app.n8n.cloud/webhook/jornada-cliente';
 let STATE = { type: null, data: {} };
-
+ 
+/* ============ TRANSLATION ENGINE ============ */
 function applyLang(lang){
   LANG = lang;
+  document.documentElement.lang = lang === 'pt' ? 'pt-PT' : 'en';
   document.querySelectorAll('[data-t]').forEach(el => {
-    const key = el.getAttribute('data-t');
-    if (T[LANG][key]) el.textContent = T[LANG][key];
+    const k = el.getAttribute('data-t');
+    if (T[lang] && T[lang][k] !== undefined){
+      el.innerHTML = T[lang][k];
+    }
   });
-  document.querySelectorAll('.lang button').forEach(b => b.classList.remove('on'));
-  document.querySelector(`.lang button[data-lang="${lang}"]`).classList.add('on');
+  // helper text on card 2 changes by type+lang
+  const helper = document.getElementById('c2-helper');
+  if (helper && STATE.type){
+    helper.textContent = T[lang][`c2_helper_${STATE.type}`] || '';
+  }
+  // lang button state
+  document.querySelectorAll('.lang button').forEach(b => {
+    b.classList.toggle('on', b.dataset.lang === lang);
+  });
 }
-
-document.querySelectorAll('.lang button').forEach(btn => {
-  btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+ 
+document.querySelectorAll('.lang button').forEach(b => {
+  b.addEventListener('click', () => applyLang(b.dataset.lang));
 });
-
+ 
+/* ============ PROGRESS ============ */
 function setStep(n){
-  document.querySelectorAll('#progress .step').forEach((s, i) => {
-    s.classList.toggle('active', i === n-1);
+  document.querySelectorAll('#progress .step').forEach(s => {
+    const k = parseInt(s.dataset.step,10);
+    s.classList.toggle('active', k === n);
+    s.classList.toggle('done', k < n);
   });
 }
-
-document.querySelectorAll('.type-card').forEach(card => {
-  card.addEventListener('click', () => {
-    document.querySelectorAll('.type-card').forEach(c => c.classList.remove('selected'));
-    card.classList.add('selected');
-    const type = card.dataset.type;
-    STATE.type = type;
-    const isEx = type === 'existente';
-
-    document.getElementById('regime_iva_field').style.display = isEx ? 'flex' : 'none';
-    document.getElementById('contas_field').style.display = isEx ? 'flex' : 'none';
-    document.getElementById('funcionarios_field').style.display = 'flex';
-
+ 
+/* ============ CARD 1 ============ */
+document.querySelectorAll('.type-card').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.type-card').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    STATE.type = btn.dataset.type;
+ 
+    // toggle existente-only fields
+    const isEx = STATE.type === 'existente';
+    document.querySelectorAll('.cond-existente').forEach(el => el.classList.toggle('hidden', !isEx));
+    document.getElementById('ctx-existente').classList.toggle('hidden', !isEx);
+    document.getElementById('ctx-nova').classList.toggle('hidden', isEx);
     document.getElementById('c2-helper').textContent = T[LANG][isEx ? 'c2_helper_existente' : 'c2_helper_nova'];
-
+ 
     if (!isEx){
+      // sensible default for nova
       const f = document.getElementById('funcionarios');
       if (!f.value) f.value = '1';
     }
-
+ 
     setTimeout(() => {
+      // Mostrar Card 2 e fazer scroll
       document.getElementById('card2').classList.remove('hidden');
       document.getElementById('card2').scrollIntoView({behavior: 'smooth', block: 'start'});
       setStep(2);
     }, 200);
   });
 });
-
+ 
+/* ============ CARD 2 ============ */
 document.getElementById('btn-back').addEventListener('click', () => {
   document.getElementById('card2').classList.add('hidden');
   document.getElementById('card1').classList.remove('hidden');
   setStep(1);
   window.scrollTo({top:0, behavior:'smooth'});
 });
-
+ 
+// NIF — only digits
 document.getElementById('nif').addEventListener('input', (e) => {
   e.target.value = e.target.value.replace(/\D/g,'').slice(0,9);
 });
-
 document.getElementById('cae').addEventListener('input', (e) => {
   e.target.value = e.target.value.replace(/\D/g,'').slice(0,5);
 });
-
+ 
 document.getElementById('form').addEventListener('submit', async (e) => {
   e.preventDefault();
-
+ 
   const get = (id) => document.getElementById(id).value.trim();
   const data = {
     tipo: STATE.type,
@@ -790,11 +731,11 @@ document.getElementById('form').addEventListener('submit', async (e) => {
     funcionarios: parseInt(get('funcionarios')||'0',10),
     contas_bancarias: STATE.type === 'existente' ? parseInt(get('contas_bancarias')||'0',10) : 0,
     email: get('email'),
-    telemovel: get('telemovel'),
     idioma: LANG,
     timestamp: new Date().toISOString(),
   };
-
+ 
+  // validation
   if (!data.nome || !data.natureza || !data.cae || !data.cidade || !data.email || !data.nif){
     alert(T[LANG].err_required); return;
   }
@@ -802,13 +743,13 @@ document.getElementById('form').addEventListener('submit', async (e) => {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)){ alert(T[LANG].err_email); return; }
   if (STATE.type === 'existente' && !data.regime_iva){ alert(T[LANG].err_required); return; }
   if (!document.getElementById('privacy').checked){ alert(T[LANG].err_required); return; }
-
+ 
   const btn = document.getElementById('btn-submit');
   const original = btn.innerHTML;
   btn.classList.add('loading');
   btn.innerHTML = T[LANG].btn_loading;
   btn.disabled = true;
-
+ 
   try {
     if (WEBHOOK_URL){
       const r = await fetch(WEBHOOK_URL, {
@@ -818,15 +759,17 @@ document.getElementById('form').addEventListener('submit', async (e) => {
       });
       if (!r.ok) throw new Error('webhook');
     } else {
+      // demo mode — simulate latency
       await new Promise(res => setTimeout(res, 800));
     }
-
+ 
     STATE.data = data;
+    // success card
     document.getElementById('recap-tipo').textContent = T[LANG][`type_${data.tipo}`] || data.tipo;
     document.getElementById('recap-nif').textContent = data.nif;
     document.getElementById('recap-nome').textContent = data.nome;
     document.getElementById('recap-email').textContent = data.email;
-
+ 
     document.getElementById('card2').classList.add('hidden');
     document.getElementById('card3').classList.remove('hidden');
     setStep(3);
@@ -841,7 +784,8 @@ document.getElementById('form').addEventListener('submit', async (e) => {
     btn.disabled = false;
   }
 });
-
+ 
+/* ============ CARD 3 — restart ============ */
 document.getElementById('btn-restart').addEventListener('click', () => {
   document.getElementById('form').reset();
   STATE = { type: null, data: {} };
@@ -849,6 +793,7 @@ document.getElementById('btn-restart').addEventListener('click', () => {
   document.getElementById('card3').classList.add('hidden');
   document.getElementById('card2').classList.add('hidden');
   document.getElementById('card1').classList.remove('hidden');
+  // reset btn
   const btn = document.getElementById('btn-submit');
   btn.classList.remove('loading');
   btn.innerHTML = '<span data-t="btn_submit">' + T[LANG].btn_submit + '</span> →';
@@ -856,9 +801,10 @@ document.getElementById('btn-restart').addEventListener('click', () => {
   setStep(1);
   window.scrollTo({top:0, behavior:'smooth'});
 });
-
+ 
+/* ============ INIT ============ */
 applyLang('pt');
-
+ 
 /* ============ NIF VALIDATION (3 PHASES) ============ */
 let debounceTimer;
 const nifInput = document.getElementById('nif');
@@ -868,11 +814,12 @@ const nifHintError = document.getElementById('nif-hint-error');
 const nomeInput = document.getElementById('nome');
 const caeInput = document.getElementById('cae');
 const cidadeInput = document.getElementById('cidade');
-
+ 
 nifInput.addEventListener('input', function() {
   clearTimeout(debounceTimer);
   const nif = this.value.trim();
   
+  // Phase 1: Empty or less than 9 digits
   if (nif.length < 9 || isNaN(nif)) {
     nifHintDefault.style.display = 'inline';
     nifHintLoading.style.display = 'none';
@@ -883,10 +830,12 @@ nifInput.addEventListener('input', function() {
     return;
   }
   
+  // Phase 2: Show "searching..."
   nifHintDefault.style.display = 'none';
   nifHintLoading.style.display = 'inline';
   nifHintError.style.display = 'none';
   
+  // Debounce 500ms
   debounceTimer = setTimeout(() => {
     const webhookUrl = 'https://eixosautomacao.app.n8n.cloud/webhook/validar-nif';
     
@@ -898,6 +847,7 @@ nifInput.addEventListener('input', function() {
     .then(res => res.json())
     .then(data => {
       if (data.sucesso) {
+        // Phase 3: Auto-fill with API data
         nifHintDefault.style.display = 'none';
         nifHintLoading.style.display = 'none';
         nifHintError.style.display = 'none';
@@ -905,6 +855,7 @@ nifInput.addEventListener('input', function() {
         caeInput.value = data.cae || '';
         cidadeInput.value = data.cidade || '';
       } else {
+        // Error: NIF not found
         nifHintDefault.style.display = 'none';
         nifHintLoading.style.display = 'none';
         nifHintError.style.display = 'inline';
@@ -923,6 +874,6 @@ nifInput.addEventListener('input', function() {
   }, 500);
 });
 </script>
-
+ 
 </body>
 </html>
